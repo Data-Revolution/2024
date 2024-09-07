@@ -14,7 +14,9 @@ filtered_coords = []
 output_string = "["
 
 # Minimum distance threshold in meters
-min_distance = 250  
+min_distance = 3000  
+
+data_cleaned = sorted(data_cleaned, key=lambda k: [k[0], k[1]])
 
 # Filter coordinates
 for coord in data_cleaned:
@@ -23,7 +25,7 @@ for coord in data_cleaned:
         filtered_coords.append(coord)
 
 for coord in filtered_coords:
-    output_string += f"[{coord[0], coord[1]}],"
+    output_string += f"[{str(coord[0])}, {str(coord[1])}],"
 output_string += "]"
 
 with open("filtered_data", "w") as file:
