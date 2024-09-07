@@ -94,7 +94,7 @@ export default function MapLayout() {
                 </div>
             </header>
             <div className="z-0">
-                <Map position={[-12.816248802483768, 131.7415618693958]} zoom={13} />
+                <Map position={[-12.816248802483768, 131.7415618693958]} zoom={8} />
             </div>
         </div>
     );
