@@ -17,6 +17,12 @@ const header = localFont({
 export const metadata: Metadata = {
   title: "Croc-Spot",
   description: "Crowdsourced crocodile sightings and alerts",
+
+export const viewport: Viewport = {
+    viewportFit: "cover",
+    initialScale: 1,
+    width: "device-width",
+    maximumScale: 1,
 };
 
 export default function RootLayout({
