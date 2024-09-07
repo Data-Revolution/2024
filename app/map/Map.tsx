@@ -3,7 +3,6 @@ import { MapContainer, Marker, TileLayer, Popup, useMap } from "react-leaflet"
 import { croc_points } from './filtered_data';
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import "./spinner.css";
 import { useEffect, useRef, useState } from "react";
 
 export default function Map(props: any) {

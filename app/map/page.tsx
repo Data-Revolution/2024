@@ -45,7 +45,7 @@ export default function MapLayout() {
                         Croc-Spot
                     </a>
                     <nav className="hidden md:flex space-x-4">
-                        <a href="/map">
+                        <a href="/">
                             <Button variant="ghost" size="sm" className="text-muted-foreground text-white font-display">
                                 <HomeIcon className="mr-2 h-4 w-4 " />
                                 Home
