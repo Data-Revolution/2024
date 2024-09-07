@@ -38,8 +38,11 @@ import {
 } from "@/components/ui/sheet";
 import { Label } from "@/components/ui/label";
 import Chat from "@/components/chat";
+import { useState } from "react";
 
 export default function VideoApp() {
+    const [currentLocation, setLocation] = useState("Katherine");
+
     return (
         <div className="flex h-screen flex-col">
             <header className="flex h-16 items-center justify-between border-b px-4 bg-lime-700">
@@ -121,14 +124,15 @@ export default function VideoApp() {
                         <ScrollArea className="h-full">
                             <div className="p-4 space-y-4">
                                 <h2 className="text-lg font-semibold font-display">Live feeds</h2>
-                                {[1, 2, 3, 4, 5].map((video) => (
-                                    <Button
-                                        key={video}
+                                {["Katherine", "Darwin", "Nhulunbuy", "Borroloola"].map((_location, index) => (
+                                    < Button
+                                        key={index}
                                         variant="ghost"
                                         className="w-full justify-start"
+                                        onClick={() => setLocation(_location)}
                                     >
                                         <PlayIcon className="mr-2 h-4 w-4" />
-                                        Video {video}
+                                        {_location}
                                     </Button>
                                 ))}
                             </div>
@@ -158,7 +162,7 @@ export default function VideoApp() {
                                 </div>
                             </div>
                             <div className="mt-4 flex items-center justify-between">
-                                <h1 className="text-2xl font-bold">Katherine - River Cam</h1>
+                                <h1 className="text-2xl font-bold">{currentLocation} - River Cam</h1>
                                 <Sheet>
                                     <SheetTrigger asChild>
                                         <Button variant="outline">Camera Details</Button>
@@ -175,7 +179,7 @@ export default function VideoApp() {
                                                 <Label htmlFor="location" className="text-left">
                                                     Location
                                                 </Label>
-                                                <p>Katherine, NT</p>
+                                                <p>{currentLocation}, NT</p>
                                             </div>
                                             <div className="grid grid-cols-2 items-left gap-4">
                                                 <Label htmlFor="postcode" className="text-left">
@@ -219,6 +223,6 @@ export default function VideoApp() {
                     </ResizablePanel>
                 </ResizablePanelGroup>
             </div>
-        </div>
+        </div >
     );
 }
