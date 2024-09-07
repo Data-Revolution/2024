@@ -17,6 +17,7 @@ import {
     UserIcon,
     LogOutIcon,
 } from "lucide-react";
+import Image from 'next/image';
 import React, { useMemo } from "react";
 import dynamic from "next/dynamic";
 
@@ -32,26 +33,36 @@ export default function MapLayout() {
 
     return (
         <div className="flex h-screen flex-col">
-            <header className="flex h-16 items-center justify-between border-b px-4 py-8 bg-lime-700 z-50">
+            <header className="flex h-16 items-center justify-between border-b px-4 py-8 bg-lime-700">
                 <div className="flex items-center space-x-4">
-                    <Link href="/" className="text-2xl font-bold">
-                        Croc-watch
-                    </Link>
+                    <a href="/" className="inline-flex text-2xl font-display text-white">
+                        <Image
+                            src="/images/croc-spot-circle.png"
+                            width={32}
+                            height={32}
+                            alt="Crocodile Logo"
+                        />
+                        Croc-Spot
+                    </a>
                     <nav className="hidden md:flex space-x-4">
-                        <Button variant="ghost" size="sm" className="text-muted-foreground">
-                            <HomeIcon className="mr-2 h-4 w-4" />
-                            Home
-                        </Button>
-                        <Button variant="ghost" size="sm" className="text-muted-foreground">
-                            <CompassIcon className="mr-2 h-4 w-4" />
-                            Explore
-                        </Button>
+                        <a href="/map">
+                            <Button variant="ghost" size="sm" className="text-muted-foreground text-white font-display">
+                                <HomeIcon className="mr-2 h-4 w-4 " />
+                                Home
+                            </Button>
+                        </a>
+                        <a href="/map">
+                            <Button variant="ghost" size="sm" className="text-muted-foreground text-white font-display">
+                                <CompassIcon className="mr-2 h-4 w-4" />
+                                Explore
+                            </Button>
+                        </a>
                     </nav>
                 </div>
                 <div className="flex items-center space-x-4">
                     <div className="flex items-center space-x-2">
-                        <div className="text-sm font-medium">
-                            Points: <span className="text-primary">1250</span>
+                        <div className="text-sm font-medium text-white font-display">
+                            Points: <span className="text-primary text-white">1250</span>
                         </div>
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
