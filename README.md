@@ -1,14 +1,5 @@
 <a id="readme-top"></a>
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -39,7 +30,7 @@ Project submission for Govhack 2024. See further information here: https://hacke
 [![Next][Next.js]][Next-url]
 [![React][React.js]][React-url]
 [![ShadCN][ShadCN.ui]][ShadCN-url]
-[![Tailwind][Tailwaind.css]][Tailwind-url]
+[![Tailwind][Tailwind.css]][Tailwind-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
