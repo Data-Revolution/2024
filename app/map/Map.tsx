@@ -1,13 +1,17 @@
-"use client";
-
+'use client';
 import { MapContainer, Marker, TileLayer, Popup, useMap } from "react-leaflet"
 import { croc_points } from './filtered_data';
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
+import "./spinner.css";
 import { useEffect, useRef, useState } from "react";
 
 export default function Map(props: any) {
     const { position, zoom } = props;
+
+    if (typeof window === "undefined") {
+        return;
+    }
 
     const iconCroc = new L.Icon({
         iconUrl: '/images/crocodile-svgrepo-com.svg',

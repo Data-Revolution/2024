@@ -1,3 +1,5 @@
+'use client';
+import "./spinner.css";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -23,7 +25,7 @@ export default function MapLayout() {
     const Map = useMemo(() => dynamic(
         () => import('./Map'),
         {
-            loading: () => <p>A map is loading</p>,
+            loading: () => <div className="h-screen bg-[#99cc00]"><div className="lds-circle"><div></div></div></div>,
             ssr: false
         }
     ), [])
