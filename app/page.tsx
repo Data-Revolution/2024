@@ -87,10 +87,12 @@ export default function VideoApp() {
                   </div>
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem>
-                  <UserIcon className="mr-2 h-4 w-4" />
-                  <span>Profile</span>
-                </DropdownMenuItem>
+                <Link href="/account">
+                  <DropdownMenuItem>
+                    <UserIcon className="mr-2 h-4 w-4" />
+                    <span>Profile</span>
+                  </DropdownMenuItem>
+                </Link>
                 <DropdownMenuItem>
                   <LogOutIcon className="mr-2 h-4 w-4" />
                   <span>Log out</span>
@@ -124,7 +126,9 @@ export default function VideoApp() {
             <main className="flex-1 p-4">
               <div className="aspect-video bg-muted">
                 <div className=" mt-4 flex items-center justify-between">
-                  <h2 className="text-lg font-semibold ml-2">Camera Controls</h2>
+                  <h2 className="text-lg font-semibold ml-2">
+                    Camera Controls
+                  </h2>
                   <Button variant="outline" size="sm" className="mr-2">
                     <TargetIcon className="h-4 w-4" />
                   </Button>
