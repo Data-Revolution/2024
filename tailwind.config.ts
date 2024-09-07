@@ -8,6 +8,10 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+	fontFamily: {
+		'sans': ['Noto Sans'],
+		'display': ['Dela Gothic One'],
+	  },
   	extend: {
   		colors: {
   			background: 'hsl(var(--background))',

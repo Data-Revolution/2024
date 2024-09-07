@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -35,21 +37,22 @@ import {
   SheetClose,
 } from "@/components/ui/sheet";
 import { Label } from "@/components/ui/label";
+import Chat from "@/components/chat";
 
 export default function VideoApp() {
   return (
     <div className="flex h-screen flex-col">
       <header className="flex h-16 items-center justify-between border-b px-4 bg-lime-700">
         <div className="flex items-center space-x-4">
-          <Link href="/" className="text-2xl font-bold">
+          <Link href="/" className="text-2xl font-display text-white">
             Croc-watch
           </Link>
           <nav className="hidden md:flex space-x-4">
-            <Button variant="ghost" size="sm" className="text-muted-foreground">
-              <HomeIcon className="mr-2 h-4 w-4" />
+            <Button variant="ghost" size="sm" className="text-muted-foreground text-white font-display">
+              <HomeIcon className="mr-2 h-4 w-4 " />
               Home
             </Button>
-            <Button variant="ghost" size="sm" className="text-muted-foreground">
+            <Button variant="ghost" size="sm" className="text-muted-foreground text-white font-display">
               <CompassIcon className="mr-2 h-4 w-4" />
               Explore
             </Button>
@@ -57,8 +60,8 @@ export default function VideoApp() {
         </div>
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-2">
-            <div className="text-sm font-medium">
-              Points: <span className="text-primary">1250</span>
+            <div className="text-sm font-medium text-white font-display">
+              Points: <span className="text-primary text-white">1250</span>
             </div>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -104,10 +107,10 @@ export default function VideoApp() {
       </header>
       <div className="flex flex-1 overflow-hidden">
         <ResizablePanelGroup direction="horizontal">
-          <ResizablePanel>
+          <ResizablePanel defaultSize={10}>
             <ScrollArea className="h-full">
               <div className="p-4 space-y-4">
-                <h2 className="text-lg font-semibold">Live feeds</h2>
+                <h2 className="text-lg font-semibold font-display">Live feeds</h2>
                 {[1, 2, 3, 4, 5].map((video) => (
                   <Button
                     key={video}
@@ -126,7 +129,7 @@ export default function VideoApp() {
             <main className="flex-1 p-4">
               <div className="aspect-video bg-muted">
                 <div className=" mt-4 flex items-center justify-between">
-                  <h2 className="text-lg font-semibold ml-2">
+                  <h2 className="text-lg font-semibold ml-2 font-display">
                     Camera Controls
                   </h2>
                   <Button variant="outline" size="sm" className="mr-2">
@@ -200,7 +203,8 @@ export default function VideoApp() {
           <ResizableHandle />
           <ResizablePanel>
             <div className="p-4 space-y-4">
-              <h2 className="text-lg font-semibold">Chat</h2>
+              <h2 className="text-lg font-semibold font-display">Chat</h2>
+              <Chat></Chat>
             </div>
           </ResizablePanel>
         </ResizablePanelGroup>
