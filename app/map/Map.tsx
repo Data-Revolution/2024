@@ -1,9 +1,9 @@
 'use client';
-import { MapContainer, Marker, TileLayer, Popup, useMap } from "react-leaflet"
+import { MapContainer, Marker, TileLayer, useMap } from "react-leaflet"
 import { croc_points } from './filtered_data';
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Map(props: any) {
     const { position, zoom } = props;
@@ -11,7 +11,6 @@ export default function Map(props: any) {
     if (typeof window === "undefined") {
         return;
     }
-
     const iconCroc = new L.Icon({
         iconUrl: '/images/crocodile-svgrepo-com.svg',
         iconRetinaUrl: '/images/crocodile-svgrepo-com.svg',
@@ -60,7 +59,6 @@ export default function Map(props: any) {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         {visibleMarkers.map((point, index) => (
-            index % 20 === 0 &&
             <Marker position={[point[0], point[1]]} icon={iconCroc} key={index}></Marker>
         ))}
         <MapController setVisibleMarkers={setVisibleMarkers} />
