@@ -14,6 +14,7 @@ import {
   CompassIcon,
   UserIcon,
   LogOutIcon,
+  ShoppingBagIcon,
 } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
@@ -52,6 +53,16 @@ export default function Component() {
             >
               <CompassIcon className="mr-2 h-4 w-4" />
               Explore
+            </Button>
+          </a>
+          <a href="/store">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="text-muted-foreground text-white font-display"
+            >
+              <ShoppingBagIcon className="mr-2 h-4 w-4" />
+              Redeem
             </Button>
           </a>
         </nav>
@@ -94,7 +105,7 @@ export default function Component() {
               </Link>
               <Link href="/store">
                 <DropdownMenuItem>
-                  <UserIcon className="mr-2 h-4 w-4" />
+                  <ShoppingBagIcon className="mr-2 h-4 w-4" />
                   <span>Store</span>
                 </DropdownMenuItem>
               </Link>

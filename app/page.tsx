@@ -37,7 +37,7 @@ export default function VideoApp() {
       <Header></Header>
       <div className="flex flex-1 overflow-hidden">
         <ResizablePanelGroup direction="horizontal">
-          <ResizablePanel defaultSize={10}>
+          <ResizablePanel defaultSize={14}>
             <ScrollArea className="h-full">
               <div className="p-4 space-y-4">
                 <h2 className="text-lg font-semibold font-display">
@@ -89,7 +89,7 @@ export default function VideoApp() {
                       <TargetIcon className="h-4 w-4" />
                     </Button>
                   </div>
-                  <div className="flex h-full items-center justify-center">
+                  <div className="flex h-full items-center justify-center custom-cursor">
                     <Image
                       src="https://www.awdcomp.net/bridge.jpg?full"
                       width={1200}

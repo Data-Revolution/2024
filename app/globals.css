@@ -26,6 +26,10 @@ body {
   }
 }
 
+/* .custom-cursor {
+  cursor: url('public/images/target.png'), auto;
+} */
+
 @layer base {
   :root {
     --background: 84.8 100% 95%;

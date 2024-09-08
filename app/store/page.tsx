@@ -9,26 +9,28 @@ import Header from "@/components/header"
 
 // Mock data for store items
 const storeItems = [
-  { id: 1, name: "Premium Skin", cost: 500, image: "/placeholder.svg?height=200&width=200" },
-  { id: 2, name: "Rare Emote", cost: 300, image: "/placeholder.svg?height=200&width=200" },
-  { id: 3, name: "Exclusive Avatar", cost: 1000, image: "/placeholder.svg?height=200&width=200" },
+  { id: 1, name: "Uluru Sunrise (Ayers Rock) and Kata Tjuta Half Day Trip", cost: 500, image: "https://cdn.ulurutoursaustralia.com.au/wp-content/uploads/2021/01/4-day-ayers-rock-and-surrounds-rock-to-rock.jpg" },
+  { id: 2, name: "Kakadu National Park Scenic Flight, 30 Minutes - Cooinda, NT", cost: 400, image: "https://www.northaustralianhelicopters.com.au/wp-content/uploads/2024/02/133340_19_lg.jpg" },
+  { id: 3, name: "The Ghan - Discounted expereinces", cost: 1000, image: "https://adelaideaz.com/sites/adelaideaz/media/images/categories/trains,-trams/tourismaustraliaghan2.jpg" },
   { id: 4, name: "Weapon Charm", cost: 200, image: "/placeholder.svg?height=200&width=200" },
   { id: 5, name: "Character Outfit", cost: 800, image: "/placeholder.svg?height=200&width=200" },
   { id: 6, name: "Loading Screen", cost: 150, image: "/placeholder.svg?height=200&width=200" },
   { id: 7, name: "Music Pack", cost: 400, image: "/placeholder.svg?height=200&width=200" },
   { id: 8, name: "Weapon Skin", cost: 600, image: "/placeholder.svg?height=200&width=200" },
+
+  
 ]
 
 export default function RedeemStore() {
-  const [score, setScore] = useState(1500) // Initial score
+  const [Score, setScore] = useState(960) // Initial score
   const [carouselIndex, setCarouselIndex] = useState(0)
 
   const featuredItems = storeItems.slice(0, 4) // First 4 items are featured
   const regularItems = storeItems.slice(4) // Rest are regular items
 
   const handleRedeem = (cost: number) => {
-    if (score >= cost) {
-      setScore(score - cost)
+    if (Score >= cost) {
+      setScore(Score - cost)
       alert("Item redeemed successfully!")
     } else {
       alert("Not enough points to redeem this item.")
@@ -38,10 +40,11 @@ export default function RedeemStore() {
   return (
     <div className="flex h-screen flex-col">
     <Header></Header>
+    <div className="p-8">
 
       {/* Featured Items Carousel */}
       <div className="mb-12">
-        <h2 className="text-2xl font-semibold mb-4">Featured Items</h2>
+        <h2 className="text-2xl font-semibold mb-4">Featured Offers</h2>
         <div className="relative">
           <div className="flex overflow-hidden">
             {featuredItems.map((item, index) => (
@@ -50,16 +53,16 @@ export default function RedeemStore() {
                 className="w-full flex-shrink-0 transition-transform duration-300 ease-in-out"
                 style={{ transform: `translateX(-${carouselIndex * 100}%)` }}
               >
-                <Card className="mx-2">
-                  <CardHeader>
+                <Card>
+                  <CardHeader className="mx-2">
                     <CardTitle>{item.name}</CardTitle>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="p-0">
                     <Image src={item.image} alt={item.name} width={200} height={200} className="w-full h-48 object-cover" />
                   </CardContent>
-                  <CardFooter className="flex justify-between">
+                  <CardFooter className="flex justify-between mx-2 pt-4">
                     <span className="text-lg font-semibold">{item.cost} points</span>
-                    <Button onClick={() => handleRedeem(item.cost)}>Redeem</Button>
+                    <Button onClick={() => handleRedeem(item.cost)} disabled={Score < item.cost}>{Score < item.cost ? `Missing Score` : 'Redeem'}</Button>
                   </CardFooter>
                 </Card>
               </div>
@@ -68,7 +71,7 @@ export default function RedeemStore() {
           <Button
             variant="outline"
             size="icon"
-            className="absolute top-1/2 left-2 transform -translate-y-1/2"
+            className="absolute top-1/2 left-2 transform -translate-y-1/2 text-white border-white"
             onClick={() => setCarouselIndex((prev) => (prev > 0 ? prev - 1 : featuredItems.length - 1))}
           >
             <ChevronLeft className="h-4 w-4" />
@@ -76,7 +79,7 @@ export default function RedeemStore() {
           <Button
             variant="outline"
             size="icon"
-            className="absolute top-1/2 right-2 transform -translate-y-1/2"
+            className="absolute top-1/2 right-2 transform -translate-y-1/2 text-white border-white"
             onClick={() => setCarouselIndex((prev) => (prev < featuredItems.length - 1 ? prev + 1 : 0))}
           >
             <ChevronRight className="h-4 w-4" />
@@ -86,7 +89,7 @@ export default function RedeemStore() {
 
       {/* Regular Items Grid */}
       <div>
-        <h2 className="text-2xl font-semibold mb-4">Regular Items</h2>
+        <h2 className="text-2xl font-semibold mb-4">All Offers</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {regularItems.map((item) => (
             <Card key={item.id}>
@@ -104,6 +107,7 @@ export default function RedeemStore() {
           ))}
         </div>
       </div>
+    </div>
     </div>
   )
 }
