@@ -26,9 +26,9 @@ body {
   }
 }
 
-/* .custom-cursor {
-  cursor: url('public/images/target.png'), auto;
-} */
+.custom-cursor {
+  cursor: url('/images/target.png'), auto;
+}
 
 @layer base {
   :root {
