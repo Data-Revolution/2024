@@ -24,8 +24,8 @@ export default function Component() {
     if (newMessage.trim()) {
       const newMsg: Message = {
         id: messages.length + 1,
-        user: "You",
-        avatar: "/placeholder.svg?height=32&width=32",
+        user: "User",
+        avatar: "/public/images/profile.png",
         content: newMessage.trim()
       }
       setMessages([...messages, newMsg])
@@ -35,7 +35,7 @@ export default function Component() {
 
   return (
     <div className="w-full max-w-sm mx-auto bg-background border rounded-lg shadow-lg flex flex-col">
-      <ScrollArea className="flex-grow p-4 h-[500px]">
+      <ScrollArea className="flex-grow p-4 h-[450px]">
         <div className="space-y-4">
           {messages.map((message) => (
             <div key={message.id} className="flex items-start space-x-2">
