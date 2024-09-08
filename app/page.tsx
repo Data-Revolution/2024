@@ -45,7 +45,7 @@ export default function VideoApp() {
       <header className="flex h-16 items-center justify-between border-b px-4 bg-lime-700">
         <div className="flex items-center space-x-4">
           <Link href="/" className="text-2xl font-display text-white">
-            Croc-watch
+            CROC-SPOT
           </Link>
           <nav className="hidden md:flex space-x-4">
             <Button variant="ghost" size="sm" className="text-muted-foreground text-white font-display">
@@ -107,7 +107,7 @@ export default function VideoApp() {
       </header>
       <div className="flex flex-1 overflow-hidden">
         <ResizablePanelGroup direction="horizontal">
-          <ResizablePanel defaultSize={10}>
+          <ResizablePanel defaultSize={12}>
             <ScrollArea className="h-full">
               <div className="p-4 space-y-4">
                 <h2 className="text-lg font-semibold font-display">Live feeds</h2>
