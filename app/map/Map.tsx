@@ -1,5 +1,5 @@
 'use client';
-import { MapContainer, Marker, TileLayer, useMap } from "react-leaflet"
+import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet"
 import { croc_points } from './filtered_data';
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
@@ -59,7 +59,12 @@ export default function Map(props: any) {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         {visibleMarkers.map((point, index) => (
-            <Marker position={[point[0], point[1]]} icon={iconCroc} key={index}></Marker>
+            <Marker position={[point[0], point[1]]} icon={iconCroc} key={index}>
+                <Popup>
+                    <p><strong>Time Spotted: </strong>8/9/2024 9:48PM</p>
+                    <p><strong>Location: </strong>{point[0]}, {point[1]}</p>
+                </Popup>
+            </Marker>
         ))}
         <MapController setVisibleMarkers={setVisibleMarkers} />
     </MapContainer >
