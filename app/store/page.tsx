@@ -10,19 +10,19 @@ import Header from "@/components/header"
 // Mock data for store items
 const storeItems = [
   { id: 1, name: "Uluru Sunrise (Ayers Rock) and Kata Tjuta Half Day Trip", cost: 500, image: "https://cdn.ulurutoursaustralia.com.au/wp-content/uploads/2021/01/4-day-ayers-rock-and-surrounds-rock-to-rock.jpg" },
-  { id: 2, name: "Kakadu National Park Scenic Flight, 30 Minutes - Cooinda, NT", cost: 400, image: "https://www.northaustralianhelicopters.com.au/wp-content/uploads/2024/02/133340_19_lg.jpg" },
-  { id: 3, name: "The Ghan - Discounted expereinces", cost: 1000, image: "https://adelaideaz.com/sites/adelaideaz/media/images/categories/trains,-trams/tourismaustraliaghan2.jpg" },
-  { id: 4, name: "Weapon Charm", cost: 200, image: "/placeholder.svg?height=200&width=200" },
-  { id: 5, name: "Character Outfit", cost: 800, image: "/placeholder.svg?height=200&width=200" },
-  { id: 6, name: "Loading Screen", cost: 150, image: "/placeholder.svg?height=200&width=200" },
-  { id: 7, name: "Music Pack", cost: 400, image: "/placeholder.svg?height=200&width=200" },
-  { id: 8, name: "Weapon Skin", cost: 600, image: "/placeholder.svg?height=200&width=200" },
+  { id: 2, name: "Kakadu National Park Scenic Flight, 30 Minutes - Cooinda, NT", cost: 1000, image: "https://www.northaustralianhelicopters.com.au/wp-content/uploads/2024/02/133340_19_lg.jpg" },
+  { id: 3, name: "The Ghan - Discounted expereinces", cost: 700, image: "https://adelaideaz.com/sites/adelaideaz/media/images/categories/trains,-trams/tourismaustraliaghan2.jpg" },
+  { id: 4, name: "Kuranda Wildlife Experience Deluxe Multi Attraction Pass", cost: 400, image: "https://www.pelago.com/img/products/AU-Australia/kuranda-wildlife-experience-deluxe-multi-attraction-pass/ebdd3a25-7e82-4b59-9b1a-0cd7d63f9b8a_kuranda-wildlife-experience-deluxe-multi-attraction-pass-large.webp" },
+  { id: 5, name: "Corroboree Houseboats - 40% off", cost: 200, image: "https://assets.atdw-online.com.au/images/ebf7d88cb7c930dd9e84d824f5f54147.jpeg" },
+  { id: 6, name: "Jumping Crocodile Cruise - Darwin", cost: 300, image: "https://www.aatkings.com/assets/banner/_resampled/SetWidth1200-adelaide-river-jumping-crocodile-d7-banner.jpg" },
+  { id: 7, name: "Darwin History & Wartime Experience Tour", cost: 400, image: "https://www.pelago.com/img/products/AU-Australia/darwin-history-and-wartime-experience-tour/e2a80a44-9f79-4d59-924a-da1a2bdf2a37_darwin-history-and-wartime-experience-tour-large.webp" },
+  { id: 8, name: "Cape Tribulation & Daintree Wilderness", cost: 500, image: "https://www.pelago.com/img/products/AU-Australia/cape-tribulation-daintree-wilderness-tct/4c1ef20e-dfd7-432d-85fc-5e59536db81e_cape-tribulation-daintree-wilderness-tct-large.webp" },
 
   
 ]
 
 export default function RedeemStore() {
-  const [Score, setScore] = useState(960) // Initial score
+  const [Score, setScore] = useState(960)
   const [carouselIndex, setCarouselIndex] = useState(0)
 
   const featuredItems = storeItems.slice(0, 4) // First 4 items are featured
@@ -31,7 +31,7 @@ export default function RedeemStore() {
   const handleRedeem = (cost: number) => {
     if (Score >= cost) {
       setScore(Score - cost)
-      alert("Item redeemed successfully!")
+      alert("Item redeemed successfully! - Details have been sent to the account email address")
     } else {
       alert("Not enough points to redeem this item.")
     }
