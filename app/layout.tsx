@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import Head from 'next/head';
 import localFont from "next/font/local";
 import "./globals.css";
-import "leaflet/dist/leaflet.css";
+//import "leaflet/dist/leaflet.css";
 
 const notoSans = localFont({
     src: "./fonts/NotoSans-VariableFont_wdth,wght.ttf",
