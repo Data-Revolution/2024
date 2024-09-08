@@ -59,7 +59,9 @@ export default function Map(props: any) {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         {visibleMarkers.map((point, index) => (
-            <Marker position={[point[0], point[1]]} icon={iconCroc} key={index}></Marker>
+            <Marker position={[point[0], point[1]]} icon={iconCroc} key={index}>
+                <p>Here</p>
+            </Marker>
         ))}
         <MapController setVisibleMarkers={setVisibleMarkers} />
     </MapContainer >

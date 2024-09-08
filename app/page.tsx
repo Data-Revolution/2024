@@ -89,7 +89,7 @@ export default function VideoApp() {
                       <TargetIcon className="h-4 w-4" />
                     </Button>
                   </div>
-                  <div className="flex h-full items-center justify-center custom-cursor">
+                  <div className="flex h-full items-center justify-center cursor-crosshair">
                     <Image
                       src="https://www.awdcomp.net/bridge.jpg?full"
                       width={1200}
