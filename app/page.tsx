@@ -81,8 +81,8 @@ export default function VideoApp() {
         </div>
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-2">
-            <div className="text-sm font-medium text-white font-display">
-              Points: <span className="text-primary text-white">1250</span>
+            <div className="text-sm font-medium text-white font-display pr-4">
+              Croc-Points: <span className="text-primary text-white">1250</span>
             </div>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
